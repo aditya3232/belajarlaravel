@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Models\Brand;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +24,11 @@ Route::get('/email/verify', function () {
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/', function () {
-    return view('home');
+    // passing data brand_image langsung dari route tanpa perlu controller
+    // biasanya kalau hanya perlu menampilkan view dan passing data (untuk read), maka langung dari route saja
+    // $brands = DB::table('brands')->get();
+    $brands = Brand::all();
+    return view('home',compact('brands'));
 });
 
 Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
