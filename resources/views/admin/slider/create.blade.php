@@ -21,7 +21,7 @@
                     <label for="exampleFormControlFile1">Slider Image</label>
                     <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
                 </div>
-                <div class="form-footer pt-4 pt-5 mt-4 border-top">
+                <div class="form-footer pt-4 mt-4 border-top">
                     <button type="submit" class="btn btn-primary btn-default">Submit</button>
                 </div>
             </form>

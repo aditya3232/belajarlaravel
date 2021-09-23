@@ -25,11 +25,11 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">No</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Image</th>
-                                <th scope="col">Actions</th>
+                                <th scope="col" width="5%">No</th>
+                                <th scope="col" width="10%">Title</th>
+                                <th scope="col" width="25%">Description</th>
+                                <th scope="col" width="15%">Image</th>
+                                <th scope="col" width="15%">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
