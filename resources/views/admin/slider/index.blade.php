@@ -7,7 +7,7 @@
             {{-- tabel dimasukkan ke card, agar tidak penuh dilayar, dengan ukuran col-md-8 --}}
             <div class="col-md-12">
                 {{-- button add --}}
-                <a href=""><button class="btn btn-info">Add Slider</button></a>
+                <a href="{{route('add.slider')}}"><button class="btn btn-info">Add Slider</button></a>
                 <br><br>
                 <div class="card">
                     {{-- alert berhasil store --}}
@@ -36,8 +36,7 @@
                             @php($i=1)
                             @foreach ($sliders as $slider)
                             <tr>
-                                {{-- penomoran yg menggunakan pagination  --}}
-                                <th scope="row">{{$sliders->firstItem()+$loop->index}}</th>
+                                <th scope="row">{{$i++}}</th>
                                 {{-- $brand->{nama field} --}}
                                 <td>{{$slider->title}}</td>
                                 <td>{{$slider->description}}</td>
