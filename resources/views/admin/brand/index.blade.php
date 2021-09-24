@@ -17,7 +17,18 @@
                     </div>
                     @endif
 
-                    <div class="card-header">All Brand</div>
+                    <!-- Start kode untuk form pencarian -->
+                    <form class="form" method="get" action="{{route('all.brand')}}">
+                        <div class="form-group w-100 mb-3">
+                            <div class="card-header">All Brand</div>
+                            <br>
+                            <div class="text-right">
+                                <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+                                <button type="submit" class="btn btn-primary mb-1 mr-3">Cari</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Start kode untuk form pencarian -->
                     {{-- tabel --}}
                     <table class="table">
                         <thead>

@@ -21,11 +21,24 @@ class BrandController extends Controller
     }
     
     //method read data
-    public function AllBrand(){
+    public function AllBrand(Request $request){
 
-        $brands = Brand::latest()->paginate(5);
+        $keyword = $request->search; //menangkap kata kunci
+        if ($keyword) {
+            // jika ada keyword maka passing yang ini
+            $brands = Brand::where('brand_name', 'like', "%" . $keyword. "%")->paginate(5);
+        } else {
+            // jika tidak ada keyword passing data yg ini
+            $brands = Brand::latest()->paginate(5);
+        }
         return view('admin.brand.index',compact('brands'));
     }
+
+    // public function AllBrand(){
+
+    //     $brands = Brand::latest()->paginate(5);
+    //     return view('admin.brand.index',compact('brands'));
+    // }
 
     // method store atau simpan data
     public function StoreBrand(Request $request){
