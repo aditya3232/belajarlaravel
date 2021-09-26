@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Brand;
 use App\Models\HomeAbout;
+use App\Models\Multipic;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +34,8 @@ Route::get('/', function () {
     $brands = Brand::all();
     // karena about menampilkan 1 row data saja (tampilkan row id 1), maka gunakan first()
     $abouts = HomeAbout::first();
-    return view('home',compact('brands','abouts'));
+    $images = Multipic::all();
+    return view('home',compact('brands','abouts','images'));
 });
 
 Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
