@@ -9,7 +9,7 @@
                 <h4>Home About</h4>
                 <br>
                 {{-- button add --}}
-                <a href="{{route('add.slider')}}"><button class="btn btn-info">Add About</button></a>
+                <a href="{{route('add.about')}}"><button class="btn btn-info">Add About</button></a>
                 <br><br>
                 <div class="card">
                     {{-- alert berhasil store --}}

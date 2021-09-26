@@ -5,6 +5,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Models\Brand;
+use App\Models\HomeAbout;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -30,7 +31,9 @@ Route::get('/', function () {
     // biasanya kalau hanya perlu menampilkan view dan passing data (untuk read), maka langung dari route saja
     // $brands = DB::table('brands')->get();
     $brands = Brand::all();
-    return view('home',compact('brands'));
+    // karena about menampilkan 1 row data saja (tampilkan row id 1), maka gunakan first()
+    $abouts = HomeAbout::first();
+    return view('home',compact('brands','abouts'));
 });
 
 Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
@@ -69,7 +72,18 @@ Route::get('/add/slider',[HomeController::class,'AddSlider'])->name('add.slider'
 
 Route::post('/store/slider',[HomeController::class,'StoreSlider'])->name('store.slider');
 
+// Admin About
 Route::get('/home/about',[AboutController::class,'HomeAbout'])->name('home.about');
+
+Route::get('/add/about',[AboutController::class,'AddAbout'])->name('add.about');
+
+Route::post('/store/about',[AboutController::class,'StoreAbout'])->name('store.about');
+
+Route::get('/about/edit/{id}',[AboutController::class,'EditAbout']);
+
+Route::post('/update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
+
+Route::get('/about/delete/{id}',[AboutController::class,'DeleteAbout']);
 
 
 

@@ -20,7 +20,7 @@ class BrandController extends Controller
         $this->middleware('auth');
     }
     
-    //method read data
+    //method read data dengan fitur search
     public function AllBrand(Request $request){
 
         $keyword = $request->search; //menangkap kata kunci
