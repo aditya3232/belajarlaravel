@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PortfolioController;
 use App\Models\Brand;
 use App\Models\HomeAbout;
 use App\Models\Multipic;
@@ -86,6 +87,8 @@ Route::get('/about/edit/{id}',[AboutController::class,'EditAbout']);
 Route::post('/update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
 
 Route::get('/about/delete/{id}',[AboutController::class,'DeleteAbout']);
+
+Route::get('/portfolio',[PortfolioController::class,'Portfolio'])->name('portfolio');   
 
 
 
